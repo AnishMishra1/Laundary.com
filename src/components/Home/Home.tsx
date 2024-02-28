@@ -9,6 +9,8 @@ import WhyChoseus from "./Subcomponent/WhyChoseus";
 import WhoWeare from "./Subcomponent/WhoWeare";
 import ProductDemo from "./Subcomponent/ProductDemo";
 
+import FeaturedRecepie from "./Subcomponent/FeaturedRecepie";
+
 const Home = () => {
   const dispatch = useDispatch();
   dispatch(updateTab("Home"));
@@ -18,8 +20,8 @@ const Home = () => {
     <div>
       <Hero />
       <WhyChoseus />
+      <FeaturedRecepie />
       <WhoWeare />
-      <ProductDemo />
     </div>
   );
 };
