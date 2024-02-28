@@ -5,6 +5,8 @@ import Home from "./components/Home/Home";
 import { useSelector } from "react-redux";
 import { RootState } from "./store/store";
 import NavBar from "./globalSubComponents/NavBar";
+import Footer from "./globalSubComponents/Footer";
+import Robinhood from "./components/Robinhood/Robinhood";
 // Local Files
 
 function App() {
