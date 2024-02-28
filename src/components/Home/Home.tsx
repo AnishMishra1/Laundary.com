@@ -8,6 +8,9 @@ import Hero from "./Subcomponent/Hero";
 import WhyChoseus from "./Subcomponent/WhyChoseus";
 import WhoWeare from "./Subcomponent/WhoWeare";
 import ProductDemo from "./Subcomponent/ProductDemo";
+import Customer from "./Subcomponent/Customer";
+import Welcome from "./Subcomponent/Welcome";
+import Booking from "./Subcomponent/Booking";
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -18,8 +21,11 @@ const Home = () => {
     <div>
       <Hero />
       <WhyChoseus />
+      <Customer />
+      <Welcome />
+      <Booking/>
       <WhoWeare />
-      <ProductDemo/>
+      <ProductDemo />
     </div>
   );
 };

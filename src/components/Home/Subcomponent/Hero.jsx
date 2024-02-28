@@ -1,6 +1,4 @@
-import React from "react";
 import "./Hero.css";
-import NavBar from "../../../globalSubComponents/NavBar";
 import sofa from "../assets/lau.png";
 
 const Hero = () => {

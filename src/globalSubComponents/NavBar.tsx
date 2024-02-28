@@ -3,160 +3,163 @@ import {
   Navbar,
   NavbarContent,
   NavbarItem,
+  Button,
   NavbarMenuToggle,
   NavbarMenu,
   NavbarMenuItem,
   Image,
+  Divider,
 } from "@nextui-org/react";
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
+import { FaPhone } from "react-icons/fa6";
+import { MdEmail } from "react-icons/md";
+import { FaInstagram } from "react-icons/fa6";
+import { FaSquareFacebook } from "react-icons/fa6";
+import { FaLinkedin } from "react-icons/fa";
+import { FaTwitter } from "react-icons/fa6";
 
 // Local Files
 import "./NavBar.css";
 import logo from "../globalAssets/logo.svg";
-import icon from "../globalAssets/icon.svg";
 import { RootState } from "../store/store";
 import { updateNavStatus } from "../store/navOpenStatusSlice";
-import { updateToLoginStatus } from "../store/toLoginSlice";
-import ButtonElement from "../globalElements/ButtonElement";
-import UserAvatar from "./UserAvatar";
-import { getCookie } from "../utils/cookies";
-const menuItems = ["Home", "Services", "About", "Contact", "Pricing", "Blog", "Log In"];
+
+const menuItems = ["Home", "About", "Contact", "Privacy"];
 
 const NavBar = () => {
-  const isLoggedIn = getCookie("token") ? true : false;
   const curTab = useSelector((state: RootState) => state.curTab.value);
   const navOpenStatus = useSelector((state: RootState) => state.navOpenStatus.value);
   const dispatch = useDispatch();
+
+  const setIsMenuOpen = () => {
+    dispatch(updateNavStatus(!navOpenStatus));
+  };
+
   return (
-    <Navbar
-      isMenuOpen={navOpenStatus}
-      onMenuOpenChange={() => {
-        dispatch(updateNavStatus(!navOpenStatus));
-      }}
-      className="h-[5rem] nav z-[200]"
-      maxWidth="xl"
-      shouldHideOnScroll
-      classNames={{ base: "bg-[rgba(0,0,0,0.4)]" }}
-    >
-      <NavbarContent>
-        <NavbarMenuToggle aria-label={navOpenStatus ? "Close menu" : "Open menu"} className="lg:hidden text-white" />
-        <div className="bg-white hidden lg:block">
-          <Image width={60} src={icon} alt="logo" radius="none" />
-        </div>
-      </NavbarContent>
-      <NavbarContent className="lg:hidden logo">
-        <Link to="../Home">
-          <div className="bg-white p-[1rem] flex justify-center items-center max-h-[5rem] ribbon">
-            <Image width={60} src={icon} alt="logo" radius="none" />
-          </div>
-        </Link>
-      </NavbarContent>
-
-      <NavbarContent className="hidden lg:flex" justify="center">
-        <NavbarItem>
-          <Link
-            to="../Home"
-            className={curTab === "Home" ? "active navActive flex flex-col px-[1rem]" : "notActive px-[1rem]"}
-          >
-            HOME
-          </Link>
-        </NavbarItem>
-
-        <NavbarItem>
-          <Link
-            to="../Services"
-            className={curTab === "Services" ? "active navActive flex flex-col px-[1rem]" : "notActive px-[1rem]"}
-          >
-            SERVICES
-          </Link>
-        </NavbarItem>
-
-        <NavbarItem>
-          <Link
-            to="../About"
-            className={curTab === "About" ? "active navActive flex flex-col px-[1rem]" : "notActive px-[1rem]"}
-          >
-            ABOUT
-          </Link>
-        </NavbarItem>
-        <NavbarItem>
-          <Link
-            to="../Contact"
-            className={curTab === "Contact" ? "active navActive flex flex-col px-[1rem]" : "notActive px-[1rem]"}
-          >
-            CONTACT US
-          </Link>
-        </NavbarItem>
-        <NavbarItem>
-          <Link
-            to="../Pricing"
-            className={curTab === "Pricing" ? "active navActive flex flex-col px-[1rem]" : "notActive px-[1rem]"}
-          >
-            PRICING
-          </Link>
-        </NavbarItem>
-        <NavbarItem>
-          <Link
-            to="../Blog"
-            className={curTab === "Blog" ? "active navActive flex flex-col px-[1rem]" : "notActive px-[1rem]"}
-          >
-            BLOG
-          </Link>
-        </NavbarItem>
-      </NavbarContent>
-      {isLoggedIn ? (
-        <NavbarContent justify="end">
+    <>
+      <Navbar
+        isMenuOpen={navOpenStatus}
+        onMenuOpenChange={() => {
+          dispatch(updateNavStatus(!navOpenStatus));
+        }}
+        className="h-[3rem] py-[1.2rem] nav z-[200] bg-[#3B5D50] justify-center hidden lg:flex"
+        maxWidth="xl"
+        isBordered
+      >
+        <NavbarContent className="hidden lg:flex" justify="center">
           <NavbarItem>
-            <UserAvatar />
+            <div className="flex flex-row gap-2">
+              <MdEmail className="text-white" size={22} />
+              <span className="text-black text-md">Email : support@tripcanny.com</span>
+            </div>
+          </NavbarItem>
+          <Divider orientation="vertical" className="h-6" />
+          <NavbarItem>
+            <div className="flex flex-row gap-2">
+              <FaPhone className="text-white" size={20} />
+              <span className="text-black text-md">Call Now : +1 (855) 574-6610</span>
+            </div>
           </NavbarItem>
         </NavbarContent>
-      ) : (
+        <NavbarContent className="hidden lg:flex" justify="center">
+          <div className="flex flex-row gap-x-4 cursor-pointer">
+            <FaInstagram size={23} className="text-white" />
+            <FaSquareFacebook size={23} className="text-white" />
+            <FaLinkedin size={23} className="text-white" />
+            <FaTwitter size={23} className="text-white" />
+          </div>
+        </NavbarContent>
+      </Navbar>
+      <Navbar
+        isMenuOpen={navOpenStatus}
+        onMenuOpenChange={setIsMenuOpen}
+        className="py-[1.2rem] nav md:z-[200] bg-white h-[8rem] nav drop-shadow-lg"
+        maxWidth="xl"
+        isBordered
+      >
+        <NavbarContent>
+          <NavbarMenuToggle aria-label={navOpenStatus ? "Close menu" : "Open menu"} className="lg:hidden text-black" />
+          <Link to="../Home">
+            <Image width={50} src={logo} alt="logo" radius="none" className="hidden lg:block" />
+          </Link>
+        </NavbarContent>
+        <NavbarContent className="lg:hidden logo">
+          <Link to="../Home">
+            <Image width={50} src={logo} alt="logo" radius="none" />
+          </Link>
+        </NavbarContent>
+
+        <NavbarContent className="hidden lg:flex " justify="center">
+          <NavbarItem>
+            <Link
+              to="../Home"
+              className={curTab === "Home" ? "active navActive flex flex-col px-[1rem]" : "notActive px-[1rem]"}
+            >
+              Home
+            </Link>
+          </NavbarItem>
+          <NavbarItem>
+            <Link
+              to="../About"
+              className={curTab === "About" ? "active navActive flex flex-col px-[1rem]" : "notActive px-[1rem]"}
+            >
+              About
+            </Link>
+          </NavbarItem>
+          <NavbarItem>
+            <Link
+              to="../Contact"
+              className={curTab === "Contact" ? "active navActive flex flex-col px-[1rem]" : "notActive px-[1rem]"}
+            >
+              Contact Us
+            </Link>
+          </NavbarItem>
+          <NavbarItem>
+            <Link
+              to="../Refund"
+              className={curTab === "Refund" ? "active navActive flex flex-col px-[1rem]" : "notActive px-[1rem]"}
+            >
+              Refundable
+            </Link>
+          </NavbarItem>
+          <NavbarItem>
+            <Link
+              to="../Privacy"
+              className={curTab === "Privacy" ? "active navActive flex flex-col px-[1rem]" : "notActive px-[1rem]"}
+            >
+              Privacy
+            </Link>
+          </NavbarItem>
+        </NavbarContent>
         <NavbarContent justify="end">
           <NavbarItem className="hidden lg:flex">
-            <ButtonElement
-              to="../Auth"
-              variant="bordered"
-              color="warning"
-              label="Login"
-              radius="full"
-              className="w-full px-[8px] py-[10px]"
-              onClickFunction={() => dispatch(updateToLoginStatus(true))}
-            />
-          </NavbarItem>
-          <NavbarItem>
-            <ButtonElement
-              to="../Auth"
-              variant="solid"
-              color="warning"
-              label="Sign Up"
-              radius="full"
-              className="w-full px-[8px] py-[10px] font-semibold"
-              onClickFunction={() => dispatch(updateToLoginStatus(false))}
-            />
+            <a className="flex gap-[1rem]" href="tel:+1 (855) 574-6610">
+              <Button isIconOnly variant="solid" className="w-[3rem] h-[3rem] text-[1.5rem] bg-[#3B5D50] text-white">
+                <FaPhone />
+              </Button>
+              <div>
+                <p>Call us for Lowest Laundry</p>
+                <p>+1 (855) 574-6610</p>
+              </div>
+            </a>
           </NavbarItem>
         </NavbarContent>
-      )}
-
-      <NavbarMenu className="mt-[1rem] bg-[rgba(0,0,0,0.4)] z-[200]">
-        {menuItems.map((item, index) => {
-          return (
+        <NavbarMenu className="bg-[white] mt-[4rem]">
+          {menuItems.map((item, index) => (
             <NavbarMenuItem key={`${item}-${index}`}>
               <Link
                 className={curTab === item ? "active" : "notActive"}
-                to={index === 6 ? "../Auth" : `../${item}`}
-                onClick={() => {
-                  dispatch(updateNavStatus(!navOpenStatus));
-                  dispatch(updateToLoginStatus(item === "Log In" ? true : false));
-                }}
+                to={index === 5 ? "../Auth" : `../${item}`}
+                onClick={setIsMenuOpen}
               >
                 {item}
               </Link>
             </NavbarMenuItem>
-          );
-        })}
-      </NavbarMenu>
-    </Navbar>
+          ))}
+        </NavbarMenu>
+      </Navbar>
+    </>
   );
 };
 
