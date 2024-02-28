@@ -2,17 +2,16 @@
 import { Routes, Route, Navigate } from "react-router-dom";
 import React from "react";
 import Home from "./components/Home/Home";
-import { RootState } from "./store/store";
 import { useSelector } from "react-redux";
-
+import { RootState } from "./store/store";
 import NavBar from "./globalSubComponents/NavBar";
-import Robinhood from "./components/Robinhood/Robinhood";
 import Footer from "./globalSubComponents/Footer";
-
+import Robinhood from "./components/Robinhood/Robinhood";
 // Local Files
 
 function App() {
-   const curTab = useSelector((state: RootState) => state.curTab.value);
+  const curTab = useSelector((state: RootState) => state.curTab.value);
+
   return (
     <>
       {curTab === "Auth" || curTab === "Robinhood" ? null : <NavBar />}

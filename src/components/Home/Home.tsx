@@ -8,6 +8,9 @@ import Hero from "./Subcomponent/Hero";
 import WhyChoseus from "./Subcomponent/WhyChoseus";
 import WhoWeare from "./Subcomponent/WhoWeare";
 import ProductDemo from "./Subcomponent/ProductDemo";
+import Customer from "./Subcomponent/Customer";
+import Welcome from "./Subcomponent/Welcome";
+import Booking from "./Subcomponent/Booking";
 
 import FeaturedRecepie from "./Subcomponent/FeaturedRecepie";
 
@@ -20,6 +23,9 @@ const Home = () => {
     <div>
       <Hero />
       <WhyChoseus />
+      <Customer />
+      <Welcome />
+      <Booking />
       <FeaturedRecepie />
       <WhoWeare />
     </div>
