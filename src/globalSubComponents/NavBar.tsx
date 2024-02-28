@@ -51,14 +51,14 @@ const NavBar = () => {
           <NavbarItem>
             <div className="flex flex-row gap-2">
               <MdEmail className="text-white" size={22} />
-              <span className="text-white text-md">Email : support@tripcanny.com</span>
+              <span className="text-white text-md">Email : support@laundry.com</span>
             </div>
           </NavbarItem>
           <Divider orientation="vertical" className="h-6" />
           <NavbarItem>
             <div className="flex flex-row gap-2">
               <FaPhone className="text-white" size={20} />
-              <span className="text-white text-md">Call Now : +1 (855) 574-6610</span>
+              <span className="text-white text-md">Call Now : +1 (845) 687-3270</span>
             </div>
           </NavbarItem>
         </NavbarContent>
@@ -134,13 +134,13 @@ const NavBar = () => {
         </NavbarContent>
         <NavbarContent justify="end">
           <NavbarItem className="hidden lg:flex">
-            <a className="flex gap-[1rem]" href="tel:+1 (855) 574-6610">
+            <a className="flex gap-[1rem]" href="tel:+1 (845) 687-3270">
               <Button isIconOnly variant="solid" className="w-[3rem] h-[3rem] text-[1.5rem] bg-[#3B5D50] text-white">
                 <FaPhone />
               </Button>
               <div>
                 <p>Call us for Lowest Laundry</p>
-                <p>+1 (855) 574-6610</p>
+                <p>+1 (845) 687-3270</p>
               </div>
             </a>
           </NavbarItem>
