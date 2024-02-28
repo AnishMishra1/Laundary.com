@@ -65,19 +65,19 @@ const Footer = () => {
             Privacy & Policy
           </Link>
           <div className="flex text-[1.8rem] gap-[1rem]">
-            <a href="https://www.facebook.com/profile.php?id=61554936182745" target="_blank" rel="noreferrer">
+            <a target="_blank" rel="noreferrer">
               <SiFacebook className="mt-[0.4rem] cursor-pointer hover:scale-105" />
             </a>
-            <a href="https://twitter.com/Kreativemachinz" target="_blank" rel="noreferrer">
+            <a target="_blank" rel="noreferrer">
               <FaSquareXTwitter className="mt-[0.4rem] cursor-pointer hover:scale-105" />
             </a>
-            <a href="https://www.youtube.com/@KreativeMachinez-23" target="_blank" rel="noreferrer">
+            <a target="_blank" rel="noreferrer">
               <TbBrandYoutubeFilled className="mt-[0.4rem] cursor-pointer hover:scale-105" />
             </a>
-            <a href="https://www.instagram.com/kreativemachinez23/" target="_blank" rel="noreferrer">
+            <a target="_blank" rel="noreferrer">
               <AiFillInstagram className="mt-[0.4rem] cursor-pointer hover:scale-105" />
             </a>
-            <a href="https://www.pinterest.com/KreativeMachinez23/" target="_blank" rel="noreferrer">
+            <a target="_blank" rel="noreferrer">
               <FaPinterest className="mt-[0.4rem] cursor-pointer hover:scale-105" />
             </a>
           </div>
