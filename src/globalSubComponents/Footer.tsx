@@ -21,7 +21,7 @@ const contactInfo = [
   },
   {
     name: "Email",
-    value: "support@hmsfreedom.com",
+    value: "support@laundry.com",
     icon: <MdEmail />,
   },
   {
@@ -45,11 +45,11 @@ const footerLinks = [
   {
     type: "Quick Links",
     data: [
-      { key: "webdev", value: "Website Development", link: "Services/Individual", state: { id: 0 } },
-      { key: "seo", value: "Search Engine Optimization", link: "Services/Individual", state: { id: 1 } },
-      { key: "socialmarketing", value: "Social Media Marketing", link: "Services/Individual", state: { id: 2 } },
-      { key: "webanalytics", value: "Web Analytics", link: "Services/Individual", state: { id: 3 } },
-      { key: "graphicdesign", value: "Graphics Design", link: "Services/Individual", state: { id: 4 } },
+      { key: "laundry", value: "Laundry", link: "Services/Individual", state: { id: 0 } },
+      { key: "dry cleaning", value: "Dry Cleaning", link: "Services/Individual", state: { id: 1 } },
+      { key: "carpet cleaning", value: "Carpet Cleaning", link: "Services/Individual", state: { id: 2 } },
+      { key: "webanalytics", value: "Drying", link: "Services/Individual", state: { id: 3 } },
+      { key: "graphicdesign", value: "Fabric Maintainance", link: "Services/Individual", state: { id: 4 } },
     ],
   },
 ];
@@ -60,15 +60,10 @@ const Footer = () => {
       <div className="flex gap-[4rem] upperFooter">
         <div className="max-w-[20rem] flex flex-col gap-[2rem] companySection">
           <Image width={150} src={logo} alt="logo" className="bg-white p-[1rem]" />
-          <p className="text-justify text-sm">
-            Kreative Machinez is a unit of <span className="font-bold">HMS Freedom LLC</span>, we're a lively digital
-            marketing agency that's all about crafting innovative solutions for businesses like yours, helping you build
-            a robust online presence that truly stands out. Driven by a ferocious hunger to create tangible impact for
-            your brands, we work with in-house specialists, industry partners and technology leaders to push the
-            boundaries of creativity and put your brand ahead of the competition.
-          </p>
 
-          <Link to='/Privacy' className="text-blue-400">Privacy & Policy</Link>
+          <Link to="/Privacy" className="text-blue-400">
+            Privacy & Policy
+          </Link>
           <div className="flex text-[1.8rem] gap-[1rem]">
             <a href="https://www.facebook.com/profile.php?id=61554936182745" target="_blank" rel="noreferrer">
               <SiFacebook className="mt-[0.4rem] cursor-pointer hover:scale-105" />
@@ -125,10 +120,10 @@ const Footer = () => {
             ))}
 
             <div className="flex flex-col gap-[1rem] max-w-[13rem]">
-              <p className="font-['poppins'] text-[#F5A524] font-bold text-[1.1rem]">Work Hours</p>
+              <p className="font-['poppins'] text-[#F5A524] font-bold text-[1.1rem]">Contact Hours</p>
               <p className="text-justify text-sm">
-                Feel free to reach out to us during our working hours for all your digital marketing needs. We're here
-                to elevate your online presence and drive success for your business.
+                Feel free to reach out to us during our contact hours for all your laundry needs. We're here to help you
+                24*7.
               </p>
               <ul className="text-sm">
                 <li>Mon - Fri : 09:00 - 18:00 (GMT)</li>
@@ -144,7 +139,7 @@ const Footer = () => {
         <Divider className="dark" />
       </div>
 
-      <p>© 2023 Kreative Machinez • All Rights Reserved</p>
+      <p>© 2023 Laundry • All Rights Reserved</p>
     </div>
   );
 };

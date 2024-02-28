@@ -19,7 +19,7 @@ const Home = () => {
       <Hero />
       <WhyChoseus />
       <WhoWeare />
-      <ProductDemo/>
+      <ProductDemo />
     </div>
   );
 };
