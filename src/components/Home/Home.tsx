@@ -25,10 +25,9 @@ const Home = () => {
       <WhyChoseus />
       <Customer />
       <Welcome />
-      <Booking/>
+      <Booking />
       <FeaturedRecepie />
       <WhoWeare />
-      <ProductDemo />
     </div>
   );
 };

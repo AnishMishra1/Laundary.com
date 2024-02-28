@@ -33,7 +33,7 @@ const Booking = () => {
     <div className="flex flex-col justify-center items-center py-[5rem] bg-[#3B5D50] gap-[2rem]">
       <div className="flex flex-col sm:gap-[0.5rem]">
         <h1 className="text-4xl sm:text-5xl font-bold  text-white text-center font-['Kanit']">
-          MAKE <span className="text-black">A BOOKING</span>
+          LAUNDRY <span className="text-black">BOOKING</span>
         </h1>
         <h2 className="text-center font-bold  text-white">
           We will collect, clean and deliver your laundary directly to your door

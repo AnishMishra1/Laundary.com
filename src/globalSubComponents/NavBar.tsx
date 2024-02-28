@@ -51,14 +51,14 @@ const NavBar = () => {
           <NavbarItem>
             <div className="flex flex-row gap-2">
               <MdEmail className="text-white" size={22} />
-              <span className="text-black text-md">Email : support@tripcanny.com</span>
+              <span className="text-white text-md">Email : support@tripcanny.com</span>
             </div>
           </NavbarItem>
           <Divider orientation="vertical" className="h-6" />
           <NavbarItem>
             <div className="flex flex-row gap-2">
               <FaPhone className="text-white" size={20} />
-              <span className="text-black text-md">Call Now : +1 (855) 574-6610</span>
+              <span className="text-white text-md">Call Now : +1 (855) 574-6610</span>
             </div>
           </NavbarItem>
         </NavbarContent>

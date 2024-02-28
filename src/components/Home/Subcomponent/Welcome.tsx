@@ -26,7 +26,7 @@ const Welcome = () => {
       <div
         className="hidden lg:flex  bg-no-repeat bg-center bg-cover w-[90rem] h-auto"
         style={{
-          backgroundImage: `url("https://images.unsplash.com/photo-1639580133969-48cbbce72e1f?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")`,
+          backgroundImage: `url("https://images.unsplash.com/photo-1627764843344-24b9c306e61b?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")`,
         }}
       ></div>
     </div>
