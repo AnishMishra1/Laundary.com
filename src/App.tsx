@@ -12,13 +12,14 @@ function App() {
 
   return (
     <>
-      {curTab === "Auth" || curTab === "TripCanny" || curTab === "Robinhood" ? null : <NavBar />}
+      {curTab === "Auth" || curTab === "Robinhood" ? null : <NavBar />}
       <Routes>
         <Route path="/" element={<Navigate to="/Home" />} />
         <Route path="/Home" element={<Home />} />
+        <Route path="/Robinhood" element={<Robinhood />} />
         <Route path="*" element={<Navigate to="/Home" />} />
       </Routes>
-      {/* {curTab === "Auth" || curTab === "TripCanny" || curTab === "Robinhood" ? null : <Footer />} */}
+      {curTab === "Auth" || curTab === "Robinhood" ? null : <Footer />}
     </>
   );
 }

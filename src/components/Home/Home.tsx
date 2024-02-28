@@ -12,6 +12,8 @@ import Customer from "./Subcomponent/Customer";
 import Welcome from "./Subcomponent/Welcome";
 import Booking from "./Subcomponent/Booking";
 
+import FeaturedRecepie from "./Subcomponent/FeaturedRecepie";
+
 const Home = () => {
   const dispatch = useDispatch();
   dispatch(updateTab("Home"));
@@ -24,6 +26,7 @@ const Home = () => {
       <Customer />
       <Welcome />
       <Booking/>
+      <FeaturedRecepie />
       <WhoWeare />
       <ProductDemo />
     </div>
